@@ -1,8 +1,11 @@
 
 $red: #D92B44;
 
+html{
+    font-size: 65%;
+}
 body{
-    font-size: 1.6rem;
+    font-size: 1.6em;
     font-weight: bold;
     font-family: "M PLUS 1", sans-serif;
 }
@@ -64,8 +67,7 @@ body{
         height: 100%;
         padding: 10rem 2rem 0;
         margin-bottom: 50px;
-        border-left: $red 20px solid;
-        border-right: $red 20px solid;
+        border: $red 20px solid;
         z-index: 9998;
         background-color: #FBF9F3;
         &.open{
@@ -110,8 +112,8 @@ body{
 }
 .burgerbtn{
     display: inline;
-    width: 4rem;
-    height: 4rem;
+    width: 64px;
+    height: 64px;
     cursor: pointer;
     z-index: 9999;
     position: fixed;
@@ -201,18 +203,16 @@ body{
     }
 }
 .fv{
-    max-width: 764px;
+    max-width: 724px;
     padding-top: 60px;
     margin: 0 auto;
-    height: 35rem;
+    height: 33rem;
     position: relative;
     &-sub{
         font-family: Montserrat, sans-serif;
         display: flex;
+        margin: 6.8rem auto 0;
         flex-direction: column;
-        position: absolute;
-        right: 5%;
-        top: 40%;
         font-size: 1rem;
         letter-spacing: 0.1em;
         color: #d3d3d3;
@@ -237,15 +237,17 @@ body{
     &-news{
         width: 90%;
         height: 3rem;
-        position: relative;
+        position: absolute;
+        top: 85%;
+        left: 5%;
         border-radius: 9999px;
         margin: 0 auto;
         background-color: #FFEDEF;
         font-size: .8rem;
         &-ttl{
             position: absolute;
-            left: 3.5rem;
-            top: 79.5%;
+            left: 8%;
+            top: 82.5%;
             font-size: .7rem;
             font-weight: 500;
             z-index: 999;
@@ -279,94 +281,98 @@ body{
 .c svg{
     position: absolute;
     width: 5rem;
-    left: 14%;
-    top: 12%;
+    left: 23%;
+    top: 13%;
 }
 .o svg{
     position: absolute;
     width: 5rem;
-    left: 37%;
-    top: 17%;
+    left: 45%;
+    top: 18%;
 }
 .m svg{
     position: absolute;
     width: 5rem;
-    left: 62%;
-    top: 10%;
+    right: 20%;
+    top: 15%;
 }
 .p svg{
     position: absolute;
     width: 5rem;
-    left: 10%;
-    top: 58%;
+    left: 18%;
+    top: 49%;
 }
 .a svg{
     position: absolute;
     width: 5rem;
-    left: 30%;
-    top: 51%;
+    left: 35%;
+    top: 64%;
 }
 .n svg{
     position: absolute;
     width: 4rem;
-    left: 58%;
-    top: 61%;
+    right: 35%;
+    top:58%;
 }
 .y svg{
     position: absolute;
     width: 5rem;
-    left: 82%;
-    top: 55%;
+    right: 15%;
+    top: 51%;
 }
 .people{
     position: absolute;
 }
 .person{
     &1{
-        width: 5rem;
-        top: 25%;
-        left: 20%;
+        width: 4rem;
+        left: 16%;
+        top: 21%;
     }
     &2{
         display: none;
     }
     &3{
-        width: 7rem;
-        top: 15%;
+        width: 6rem;
         left: 45%;
+        top: 21%;
+        z-index: 9;
     }
     &4{
-        width: 4rem;
-        top: 40%;
-        left: 37%;
+        width: 3.3rem;
+        left: 38%;
+        top: 51%;
     }
     &5{
-        width: 10rem;
-        top: 7%;
-        right: 8%;
+        width: 9rem;
+        right: 11%;
+        top: 12%;
     }
     &6{
         width: 5.5rem;
-        right: 20%;
-        top: 37%;
+        right: 31%;
+        top: 45%;
     }
 }
 .plant{
-    width: 5rem;
+    width: 3rem;
     position: absolute;
-    top: 3%;
     left: 28%;
+    top: 17%;
 }
 .about{
-    max-width: 764px;
+    max-width: 728px;
     width: 100%;
-    height: 45rem;
+    height: 60rem;
     position: relative;
     margin: 0 auto;
     background-image: url(../images/message-bg.png);
     background-size: cover;
     &-ttl{
-        margin: 0 40px;
+        max-width: 728px;
+        width: 80%;
+        display: block;
+        margin: 0 auto;
         p{
             display: inline-block;
             background-color: #fff;
@@ -387,8 +393,8 @@ body{
         flex-direction: column-reverse;
         align-items: flex-start;
         writing-mode: vertical-lr;
-        margin-top: -150px;
-        margin-left: 300px;
+        margin-left: 80%;
+        margin-top: -12rem;
         p{
             border-left: $red 1px solid;
             font-size: .8rem;
@@ -403,9 +409,10 @@ body{
         position: absolute;
         bottom: 0;
         display: block;
+        max-height: 35rem;
     }
     &-txt{
-        width: 100%;
+        width: 90%;
         display: flex;
         margin: 100px auto 0;
         &-pc{
@@ -414,7 +421,7 @@ body{
         &-main{
             font-size: .9rem;
             font-weight: normal;
-            letter-spacing: .2rem;
+            letter-spacing: .15rem;
             margin: 0 auto;
             p{
                 padding-bottom: 1rem;
@@ -429,7 +436,7 @@ body{
 .person{
     background-color: $red;
     padding-top: 50px;
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
     color: #fff;
     &-ttl{
@@ -459,31 +466,32 @@ body{
     }
 }
 .staff{
-    margin-top: 2rem;
     padding-bottom: 50px;
-    max-width: 768px;
+    max-width: 724px;
     width: 100%;
+    margin: 3rem auto 0;
+    &-swiper{
+        width: 35rem;
+    }
     &-list{
         color: #fff;
         &-item{
             position: relative;
             display: block;
-            width: 350px;
-            height: 100%;
-            margin: 0 auto;
             h2{
                 display: block;
                 position: absolute;
-                left: 20%;
-                top: 0;
-                font-size: 2rem;
+                left: 5%;
+                top: 5%;
+                font-size: 4rem;
                 font-weight: 300;
+                font-style: italic;
                 line-height: 1;
             }
             a{
                 position: absolute;
+                left: 5%;
                 top: 45%;
-                left: 20%;
                 width: 400px;
                 cursor: pointer;
                 &:hover{
@@ -493,13 +501,13 @@ body{
                 }
                 h3{
                 display: inline;
-                top: 70%;
-                font-size: 1.2rem;
+                font-size: 1.6rem;
                 padding: 1px 5px;
+                line-height: 2.2;
+                letter-spacing: .05em;
                 color: #000;
                 background-color: #fff;
                 border-bottom: #000 2px solid;
-                letter-spacing: -.1rem;
                 }
                 span{
                     display: flex;
@@ -525,13 +533,16 @@ body{
                 font-weight: 400;
                 position: absolute;
                 bottom: 14.5%;
-                left: 20%;
+                left: 5%;
             }
         }
         &-img{
             display: flex;
             justify-content: center;
             align-items: center;
+            width: 25rem;
+            margin-left: auto;
+            margin-right: 20px;
         }
         &-btn{
             display: block;
@@ -609,15 +620,13 @@ body{
         display: flex;
         align-items: flex-start;
         justify-content: center;
-        height: 35rem;
+        padding-top: 20rem;
     }
     &-logo{
         width: 3.5rem;
-        padding-top: 10rem;
     }
     &-ttl{
         font-size: 1.2rem;
-        padding-top: 10rem;
         line-height: 1.2;
         font-weight: 500;
         color: #fff;
@@ -813,7 +822,7 @@ body{
     }
     &-img{
         position: absolute;
-        bottom: -4.3%;
+        bottom: -6.4%;
         left: 2.5%;
         width: 95%;
     }
@@ -878,7 +887,7 @@ body{
         font-size: .8rem;
         margin-top: 3rem;
         a{
-            border-bottom: #000 1px solid;
+            border-bottom: #000 .5px solid;
         }
         ul{
             display: flex;

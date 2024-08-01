@@ -19,18 +19,13 @@ const news = new Swiper(".fv-news",{
 
 //staff
 
-const staff = new Swiper(".staff",{
+const staff = new Swiper(".staff-swiper",{
     loop: true,
-    slidesPerView: 1,
+    centeredSlides: true,
+    slidesPerView: "auto",
 
     autoplay: {
         delay: 5000
     },
 
-    breakpoints: {
-        1025: {
-          slidesPerView: 2.2, 
-          spaceBetween: 70, 
-        } 
-      },
     });
