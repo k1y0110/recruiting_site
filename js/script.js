@@ -28,4 +28,11 @@ const staff = new Swiper(".staff-swiper",{
         delay: 5000
     },
 
+    breakpoints: {
+        1025: {
+          slidesPerView: 2.5, 
+          spaceBetween: 60, 
+        } 
+      },
+
     });
