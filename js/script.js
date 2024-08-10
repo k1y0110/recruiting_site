@@ -3,6 +3,7 @@
 $(".burgerbtn").on("click",function(){
     $('.header-nav').toggleClass('open')
     $('.burgerbtn-line').toggleClass('open');
+    $('.midsize').toggleClass('open');
     $('body').toggleClass('noscroll');
 });
 
