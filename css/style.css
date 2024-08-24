@@ -1,10 +1,5 @@
 @charset "UTF-8";
-html {
-  font-size: 65%;
-}
-
 body {
-  font-size: 1.6em;
   font-weight: bold;
   font-family: "M PLUS 1", sans-serif;
 }
@@ -254,63 +249,73 @@ body {
 }
 
 .fv {
-  max-width: 724px;
-  padding-top: 60px;
-  margin: 0 auto 60px;
-  height: 35rem;
+  width: 25rem;
+  height: 30rem;
   position: relative;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+.fv-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 .fv-sub {
   font-family: Montserrat, sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  margin: 6.8rem auto 0;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  font-size: 1rem;
-  letter-spacing: 0.1em;
-  color: #d3d3d3;
+  position: absolute;
+  display: block;
+  top: 45%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  font-size: 1.2rem;
+  letter-spacing: 0.05em;
+  opacity: 0.2;
   text-align: center;
+  white-space: nowrap;
   cursor: default;
 }
 .fv-sub span:nth-child(2) {
-  font-size: 2rem;
-  font-weight: 300;
-  font-style: italic;
+  width: 24rem;
+  height: 6rem;
+  display: block;
+  margin: -1rem;
+}
+.fv-sub span:nth-child(2) path {
+  fill: #000;
+  stroke: #000;
 }
 .fv span path {
   fill: #D92B44;
   stroke: #D92B44;
   stroke-width: 0.2px;
 }
-.fv-img {
-  height: 25rem;
-}
 .fv-news {
   width: 90%;
-  height: 3rem;
-  position: absolute;
-  top: 85%;
-  left: 5%;
+  height: 2rem;
+  padding-left: 5%;
+  padding-right: 5%;
   border-radius: 9999px;
   margin: 0 auto;
   background-color: #FFEDEF;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   z-index: 998;
 }
 .fv-news-ttl {
   position: absolute;
-  left: 8%;
-  top: 82.5%;
-  font-size: 0.7rem;
+  left: 12.5%;
+  top: 30.2rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
   font-weight: 500;
   z-index: 999;
 }
 .fv-news-ttl a {
   width: 5rem;
+  height: 1.5rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -335,59 +340,63 @@ body {
 }
 .fv-news-list-item p {
   color: #D92B44;
-  padding-left: 1rem;
+  padding-left: 0.5rem;
 }
 .fv-news-list-item a {
   margin-left: 1rem;
+  margin-right: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .c svg {
   position: absolute;
-  width: 5rem;
-  left: 23%;
-  top: 13%;
+  width: 6.5rem;
+  left: 4rem;
+  top: 4.5rem;
 }
 
 .o svg {
   position: absolute;
-  width: 5rem;
-  left: 45%;
-  top: 18%;
+  width: 6.5rem;
+  left: 10rem;
+  top: 6.5rem;
 }
 
 .m svg {
   position: absolute;
-  width: 5rem;
-  right: 20%;
-  top: 15%;
+  width: 6.4rem;
+  left: 16rem;
+  top: 4.5rem;
 }
 
 .p svg {
   position: absolute;
-  width: 5rem;
-  left: 18%;
-  top: 49%;
+  width: 7rem;
+  left: 2.4rem;
+  top: 19rem;
 }
 
 .a svg {
   position: absolute;
-  width: 5rem;
-  left: 35%;
-  top: 64%;
+  width: 7rem;
+  left: 7rem;
+  top: 23rem;
 }
 
 .n svg {
   position: absolute;
-  width: 4rem;
-  right: 35%;
-  top: 58%;
+  width: 5.2rem;
+  left: 12.5rem;
+  top: 21rem;
 }
 
 .y svg {
   position: absolute;
-  width: 5rem;
-  right: 15%;
-  top: 51%;
+  width: 7rem;
+  left: 17.5rem;
+  top: 19rem;
 }
 
 .people {
@@ -395,70 +404,79 @@ body {
 }
 
 .person1 {
-  width: 4rem;
-  left: 16%;
-  top: 21%;
+  width: 4.2rem;
+  left: 2rem;
+  top: 8.2rem;
 }
 .person2 {
   display: none;
 }
 .person3 {
-  width: 6rem;
-  left: 45%;
-  top: 21%;
+  width: 5.5rem;
+  left: 10.8rem;
+  top: 8rem;
   z-index: 9;
 }
 .person4 {
-  width: 3.3rem;
-  left: 38%;
-  top: 51%;
+  width: 3.5rem;
+  left: 8.5rem;
+  top: 18.5rem;
 }
 .person5 {
-  width: 9rem;
-  right: 11%;
-  top: 12%;
+  width: 8.2rem;
+  left: 16rem;
+  top: 6.8rem;
 }
 .person6 {
   width: 5.5rem;
-  right: 31%;
-  top: 45%;
+  left: 14rem;
+  top: 16rem;
 }
 
 .plant {
-  width: 3rem;
+  width: 2.7rem;
   position: absolute;
-  left: 28%;
-  top: 17%;
+  left: 6.3rem;
+  top: 6.3rem;
 }
 
 .about {
-  max-width: 728px;
-  width: 100%;
+  margin: 0 auto;
+  padding-top: 3rem;
+  width: 90%;
   height: 60rem;
   position: relative;
-  margin: 0 auto;
   background-image: url(../images/message-bg.png);
   background-size: cover;
 }
 .about-ttl {
-  max-width: 728px;
-  width: 80%;
-  display: block;
-  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
 }
 .about-ttl p {
-  display: inline-block;
+  position: relative;
   background-color: rgba(255, 255, 255, 0.462745098);
   border-bottom: #000 3px solid;
-  letter-spacing: 0.2rem;
+  font-size: 2.2rem;
+  letter-spacing: 0.1em;
   line-height: 1;
-  margin-bottom: 10px;
+  font-weight: 500;
 }
 .about-ttl p span {
-  font-size: 2.2rem;
+  font-size: 2.8rem;
 }
 .about-ttl-big {
-  font-size: 2.8rem;
+  font-size: 3.3rem !important;
+  white-space: nowrap;
+  letter-spacing: 0.01em !important;
 }
 .about-sub {
   display: -webkit-box;
@@ -475,7 +493,6 @@ body {
       -ms-writing-mode: tb-lr;
           writing-mode: vertical-lr;
   margin-left: 80%;
-  margin-top: -12rem;
 }
 .about-sub p {
   border-left: #D92B44 1px solid;

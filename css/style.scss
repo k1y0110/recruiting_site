@@ -1,11 +1,6 @@
 
 $red: #D92B44;
-
-html{
-    font-size: 65%;
-}
 body{
-    font-size: 1.6em;
     font-weight: bold;
     font-family: "M PLUS 1", sans-serif;
 }
@@ -213,25 +208,40 @@ body{
     }
 }
 .fv{
-    max-width: 724px;
-    padding-top: 60px;
-    margin: 0 auto 60px;
-    height: 35rem;
+    width: 25rem;
+    height: 30rem;
     position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    &-wrapper{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    }
     &-sub{
         font-family: Montserrat, sans-serif;
-        display: flex;
-        margin: 6.8rem auto 0;
-        flex-direction: column;
-        font-size: 1rem;
-        letter-spacing: 0.1em;
-        color: #d3d3d3;
+        position: absolute;
+        display: block;
+        top: 45%;
+        left: 50%;
+        transform: translateX(-50%);
+        font-size: 1.2rem;
+        letter-spacing: .05em;
+        opacity: .2;
         text-align: center;
+        white-space: nowrap;
         cursor: default;
         span:nth-child(2){
-            font-size: 2rem;
-            font-weight: 300;
-            font-style: italic;
+            width: 24rem;
+            height: 6rem;
+            display: block;
+            margin: -1rem;
+            path{
+                fill: #000;
+                stroke: #000;
+                }
         }
     }
     span{
@@ -241,29 +251,27 @@ body{
             stroke-width: .2px;
         }
     }
-    &-img{
-        height: 25rem;
-    }
     &-news{
         width: 90%;
-        height: 3rem;
-        position: absolute;
-        top: 85%;
-        left: 5%;
+        height: 2rem;
+        padding-left: 5%;
+        padding-right: 5%;
         border-radius: 9999px;
         margin: 0 auto;
         background-color: #FFEDEF;
-        font-size: .8rem;
+        font-size: .6rem;
         z-index: 998;
         &-ttl{
             position: absolute;
-            left: 8%;
-            top: 82.5%;
-            font-size: .7rem;
+            left: 12.5%;
+            top: 30.2rem;
+            font-size: .75rem;
+            letter-spacing: .1em;
             font-weight: 500;
             z-index: 999;
             a{
                 width: 5rem;
+                height: 1.5rem;
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -280,124 +288,132 @@ body{
                 align-items: center;
                 p{
                     color: $red;
-                    padding-left: 1rem;
+                    padding-left: 0.5rem;
                 }
                 a{
                     margin-left: 1rem;
+                    margin-right: 1rem;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
             }
         }
     }
 }
+
 .c svg{
     position: absolute;
-    width: 5rem;
-    left: 23%;
-    top: 13%;
+    width: 6.5rem;
+    left: 4rem;
+    top: 4.5rem;
 }
 .o svg{
     position: absolute;
-    width: 5rem;
-    left: 45%;
-    top: 18%;
+    width: 6.5rem;
+    left: 10rem;
+    top: 6.5rem;
 }
 .m svg{
     position: absolute;
-    width: 5rem;
-    right: 20%;
-    top: 15%;
+    width: 6.4rem;
+    left: 16rem;
+    top: 4.5rem;
 }
 .p svg{
     position: absolute;
-    width: 5rem;
-    left: 18%;
-    top: 49%;
+    width: 7rem;
+    left: 2.4rem;
+    top: 19rem;
 }
 .a svg{
     position: absolute;
-    width: 5rem;
-    left: 35%;
-    top: 64%;
+    width: 7rem;
+    left: 7rem;
+    top: 23rem;
 }
 .n svg{
     position: absolute;
-    width: 4rem;
-    right: 35%;
-    top:58%;
+    width: 5.2rem;
+    left: 12.5rem;
+    top: 21rem;
 }
 .y svg{
     position: absolute;
-    width: 5rem;
-    right: 15%;
-    top: 51%;
+    width: 7rem;
+    left: 17.5rem;
+    top: 19rem;
 }
 .people{
     position: absolute;
 }
 .person{
     &1{
-        width: 4rem;
-        left: 16%;
-        top: 21%;
+        width: 4.2rem;
+        left: 2rem;
+        top: 8.2rem;
     }
     &2{
         display: none;
     }
     &3{
-        width: 6rem;
-        left: 45%;
-        top: 21%;
+        width: 5.5rem;
+        left: 10.8rem;
+        top: 8rem;
         z-index: 9;
     }
     &4{
-        width: 3.3rem;
-        left: 38%;
-        top: 51%;
+        width: 3.5rem;
+        left: 8.5rem;
+        top: 18.5rem;
     }
     &5{
-        width: 9rem;
-        right: 11%;
-        top: 12%;
+        width: 8.2rem;
+        left: 16rem;
+        top: 6.8rem;
     }
     &6{
         width: 5.5rem;
-        right: 31%;
-        top: 45%;
+        left: 14rem;
+        top: 16rem;
     }
 }
 .plant{
-    width: 3rem;
+    width: 2.7rem;
     position: absolute;
-    left: 28%;
-    top: 17%;
+    left: 6.3rem;
+    top: 6.3rem;
 }
 .about{
-    max-width: 728px;
-    width: 100%;
+    margin: 0 auto;
+    padding-top: 3rem;
+    width: 90%;
     height: 60rem;
     position: relative;
-    margin: 0 auto;
     background-image: url(../images/message-bg.png);
     background-size: cover;
     &-ttl{
-        max-width: 728px;
-        width: 80%;
-        display: block;
-        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
         p{
-            display: inline-block;
+            position: relative;
             background-color: #ffffff76;
             border-bottom: #000 3px solid;
-            letter-spacing: .2rem;
+            font-size: 2.2rem;
+            letter-spacing: .1em;
             line-height: 1;
-            margin-bottom: 10px;
+            font-weight: 500;
             span{
-                font-size: 2.2rem;
+                font-size: 2.8rem;
             }
         }
         &-big{
-            font-size: 2.8rem;
+            font-size: 3.3rem !important;
+            white-space: nowrap;
+            letter-spacing: .01em !important;
         }
+        
     }
     &-sub{
         display: flex;
@@ -405,7 +421,6 @@ body{
         align-items: flex-start;
         writing-mode: vertical-lr;
         margin-left: 80%;
-        margin-top: -12rem;
         p{
             border-left: $red 1px solid;
             font-size: .8rem;
