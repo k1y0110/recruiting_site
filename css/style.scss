@@ -1,8 +1,18 @@
 
 $red: #D92B44;
+html{
+    font-size: clamp(9px, .83vw, 1rem);
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
 body{
     font-weight: bold;
     font-family: "M PLUS 1", sans-serif;
+}
+@media screen and (max-width: 768px){
+    html{
+        font-size: min(3.5vw, .875rem);
+    }
 }
 .pc-br{
     display: none;
@@ -253,18 +263,18 @@ body{
     }
     &-news{
         width: 90%;
-        height: 2rem;
+        height: 3rem;
         margin-top: 2rem;
         padding-left: 5%;
         padding-right: 5%;
         border-radius: 9999px;
         background-color: #FFEDEF;
-        font-size: .6rem;
+        font-size: .7rem;
         z-index: 998;
         &-ttl{
             position: absolute;
-            left: 12.5%;
-            top: 32.2rem;
+            left: 14.5%;
+            top: 32.5rem;
             font-size: .75rem;
             letter-spacing: .1em;
             font-weight: 500;
@@ -288,11 +298,9 @@ body{
                 align-items: center;
                 p{
                     color: $red;
-                    padding-left: 0.5rem;
                 }
                 a{
                     margin-left: 1rem;
-                    margin-right: 1rem;
                     white-space: nowrap;
                     overflow: hidden;
                     text-overflow: ellipsis;
@@ -385,31 +393,37 @@ body{
     top: 6.3rem;
 }
 .about{
-    margin: 0 auto;
     padding-top: 3rem;
-    width: 90%;
-    height: 60rem;
+    padding-bottom: 16rem;
     position: relative;
     background-image: url(../images/message-bg.png);
-    background-size: cover;
+    background-position: bottom,center;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
     &-ttl{
         display: flex;
-        flex-direction: column;
-        align-items: start;
-        p{
-            position: relative;
-            background-color: #ffffff76;
-            border-bottom: #000 3px solid;
-            font-size: 2.2rem;
-            letter-spacing: .1em;
-            line-height: 1;
-            font-weight: 500;
-            span{
-                font-size: 2.8rem;
+        width: 90%;
+        margin: 0 auto 2.9rem;
+        &-wrapper{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            p{
+                padding-bottom: .2rem;
+                margin-bottom: -.5rem;
+                background-color: #ffffff76;
+                border-bottom: #000 5px solid;
+                font-size: 2rem;
+                letter-spacing: .2em;
+                line-height: 1;
+                font-weight: 500;
+                span{
+                    font-size: 2.6rem;
+                }
             }
         }
         &-big{
-            font-size: 3.3rem !important;
+            font-size: 3.5rem !important;
             white-space: nowrap;
             letter-spacing: .01em !important;
         }
@@ -420,12 +434,14 @@ body{
         flex-direction: column-reverse;
         align-items: flex-start;
         writing-mode: vertical-lr;
-        margin-left: 80%;
+        margin-left: -2.7rem;
+        margin-top: -.8rem;
         p{
             border-left: $red 1px solid;
-            font-size: .8rem;
+            font-size: .9rem;
             font-weight: 500;
             line-height: 1.3;
+            letter-spacing: .1em;
             &:first-child{
                 margin-left: 5px;
             }
@@ -433,9 +449,10 @@ body{
     }
     &-img{
         position: absolute;
-        bottom: 0;
-        display: block;
-        max-height: 35rem;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -4rem;
+        mask-image: linear-gradient(to top, transparent 4rem, #000 4rem, #000);
     }
     &-circle{
         display: none;
@@ -446,14 +463,14 @@ body{
     &-txt{
         width: 90%;
         display: flex;
-        margin: 100px auto 0;
+        margin: 0 auto;
         &-pc{
             display: none;
         }
         &-main{
-            font-size: .9rem;
+            font-size: 1.1rem;
             font-weight: normal;
-            letter-spacing: .15rem;
+            letter-spacing: .2em;
             margin: 0 auto;
             p{
                 padding-bottom: 1rem;
@@ -974,6 +991,10 @@ body{
     }
 }
 @media screen and (min-width:768px) {
+    html{
+        overflow-y: auto;
+        overflow-x: auto;
+    }
     .sp-br{
         display: none;
     }

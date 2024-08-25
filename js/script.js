@@ -11,7 +11,7 @@ $(".burgerbtn").on("click",function(){
 
 const news = new Swiper(".fv-news",{
     loop: true,
-    slidesPerView: 1,
+    slidesPerView: .8,
 
     autoplay: {
         delay: 5000
