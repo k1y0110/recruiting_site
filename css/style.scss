@@ -692,10 +692,11 @@ body{
     }
     &-ttl{
         font-size: 1.2rem;
-        line-height: 1.2;
+        line-height: 1.5;
         font-weight: 500;
         color: #fff;
         letter-spacing: .2rem;
+        z-index: 1;
         span{
             font-size: 3rem;
         }
@@ -959,6 +960,7 @@ body{
 .mid-entry{
     background-color: #0139A4;
     a{
+        font-weight: 500;
         &:first-of-type{
             text-align: left;
             line-height: 1.4;
@@ -968,10 +970,11 @@ body{
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             p{
                 display: flex;
                 flex-direction: column;
+                letter-spacing: .05em;
             }
         }
         &:hover{
@@ -979,7 +982,7 @@ body{
             transition: .3s;
         }
         span{
-            font-size: 1rem;
+            font-size: .9rem;
         }
     }
 }
