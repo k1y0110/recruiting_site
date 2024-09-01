@@ -6,8 +6,10 @@ html{
     overflow-x: hidden;
 }
 body{
+    position: relative;
     font-weight: bold;
     font-family: "M PLUS 1", sans-serif;
+    z-index: -10;
 }
 @media screen and (max-width: 768px){
     html{
@@ -45,13 +47,17 @@ body{
   }
 .bg-{
     &r{
+        position: relative;
         background: $red;
-        padding-top: 20px;
         overflow: hidden;
+        padding-top: 20px;
+        z-index: -5;
     }
     &w{
+        position: relative;
         background-color: #FBF9F3;
         margin: 0 20px;
+        z-index: -3;
     }
 }
 .header{
@@ -65,11 +71,15 @@ body{
         overflow-x: hidden;
         overflow: hidden;
         background-color: $red;
+        transition: 1s;
         &-wrapper{
             height: 20px;
             ul{
                 display: none;
             }
+        }
+        &.open{
+            opacity: 0;
         }
     }
     &-logo{
@@ -95,16 +105,17 @@ body{
         opacity: 0;
         position: fixed;
         pointer-events: none;
-        transition: .3s;
+        transition: 1s;
+        top: 0;
+        left: 0;
         right: 0;
         width: 100%;
         height: 100%;
-        padding: 10rem 2rem 0;
-        margin-bottom: 50px;
+        padding: 6rem 5%;
         font-size: .8rem;
         border-left: $red 20px solid;
         border-right: $red 20px solid;
-        z-index: 9998;
+        z-index: 1001;
         background-color: #FBF9F3;
         &.open{
             opacity: 1;
@@ -134,6 +145,44 @@ body{
                         height: .5rem;
                         position: absolute;
                         right: 4rem;
+                    }
+                }
+            }
+        }
+        &-entry{
+            display: block;
+            margin-bottom: 2.285rem;
+            font-weight: 500;
+            &-item{
+                a{
+                    position: relative;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 4.285rem;
+                    color: #fff;
+                    background-color: #000;
+                    font-size: 1.25rem;
+                    overflow: hidden;
+                    &::after,
+                    &::before {
+                        position: absolute;
+                        display: block;
+                        content: "";
+                        box-sizing: border-box;
+                        transition: all 1s;
+                    }
+                    &:hover:after{
+                        top: 0;
+                        bottom: 0;
+                        left: 0;
+                        background-color: rgba(255, 255, 255, .3);
+                    }
+                    &::after{
+                        top: 0;
+                        left: -100%;
+                        width: 100%;
+                        height: 100%;
                     }
                 }
             }
@@ -189,6 +238,7 @@ body{
 }
 .entry-btn{
     margin: 0;
+    font-weight: 500;
     &-link{
         display: flex;
         position: fixed;
@@ -223,6 +273,9 @@ body{
             left: -100%;
             width: 100%;
             height: 100%;
+        }
+        &.open{
+            opacity: 0;
         }
     }
 }
@@ -280,8 +333,8 @@ body{
         z-index: 998;
         &-ttl{
             position: absolute;
-            left: 14.5%;
-            top: 32.5rem;
+            left: 10%;
+            top: 31.2rem;
             font-size: .75rem;
             letter-spacing: .1em;
             font-weight: 500;
@@ -296,7 +349,6 @@ body{
                 border-radius: 9999px;
                 color: #fff;
                 background-color: $red;
-                
             }
         }
         &-list{
@@ -1044,6 +1096,8 @@ body{
     html{
         overflow-y: auto;
         overflow-x: auto;
+        min-width: 1080px;
+        background-size: 1080px;
     }
     .sp-br{
         display: none;
@@ -1051,66 +1105,142 @@ body{
     .pc-br{
         display: block;
     }
-    .midsize{
-        opacity: 0;
-        pointer-events: none;
-        &.open{
-            opacity: 1;
-            pointer-events: all;
+    .bg{
+        &-r{
+            padding-top: 12px;
+        }
+        &-w{
+            margin: 0 12px;
+        }
+    }
+    .header{
+        &-loop{
+            height: 12px;
+        }
+        &-nav{
+            border-width: 15px;
+        }
+    }
+    .entry-btn{
+        &-link{
+            height: 15px;
+            background-color: $red;
+            color: $red;
+            pointer-events: none;
         }
     }
     .fv{
+        height: 53.125rem;
+        width: auto;
+        left: auto;
+        transform: none;
         &-sub{
-            margin-top: 11rem;
+            left: 88rem;
+            top: 10rem;
+            opacity: 1;
+            transform: none;
         }
         &-news{
-            top: 95%;
+            position: relative;
+            width: 33.75rem;
+            height: 4rem;
+            font-size: 1.3rem;
+            padding-left: 1.75rem;
+            left: -32rem;
+            top: -2rem;
+            p{
+                font-size: 1.125rem;
+                padding-left: 2rem;
+            }
+            a{
+                margin-right: 1.5rem;
+            }
             &-ttl{
-                top: 92.5%;
+                top: auto;
+                left: 4rem;
+                font-size: 1.125rem;
+                font-weight: 600;
+                a{
+                    width: 8rem;
+                    height: 4rem;
+                }
             }
         }
     }
     .c svg{
-        width: 10rem;
+        width: 15rem;
+        left: 10rem;
+        top: 8.9375rem;
     }
     .o svg{
-        width: 10rem;
+        width: 15rem;
+        left: 24.75rem;
+        top: 15.5rem;
     }
     .m svg{
-        width: 10rem;
+        width: 14.5rem;
+        left: 42rem;
+        top: 9.75rem;
+        z-index: -2;
     }
     .p svg{
-        width: 10rem;
+        width: 15rem;
+        left: 47.1875rem;
+        top: 32.25rem;
     }
     .a svg{
-        width: 10rem;
+        width: 15rem;
+        left: 63.125rem;
+        top: 38.5rem;
     }
     .n svg{
-        width: 8rem;
+        width: 11.5rem;
+        left: 81rem;
+        top: 33.5rem;
     }
     .y svg{
-        width: 10rem;
+        width: 15rem;
+        left: 92.875rem;
+        top: 27.5rem;
     }
     .person{
         &1{
-            width: 6rem;
+            width: 187px;
+            left: 6.25rem;
+            top: 17.4375rem;
+            z-index: 1;
+        }
+        &2{
+            width: auto;
+            left: 20.375rem;
+            top: 29.8125rem;
         }
         &3{
-            width: 9rem;
+            width: 251px;
+            left: 32.5rem;
+            top: 17.5rem;
+            z-index: -1;
         }
         &4{
-            width: 5rem;
+            width: 137px;
+            left: 51.125rem;
+            top: 17.9375rem;
         }
         &5{
-            width: 13.5rem;
+            width: 337px;
+            left: 59.5625rem;
+            top: 5.3125rem;
         }
         &6{
-            width: 8rem;
+            width: 208px;
+            left: 82.25rem;
+            top: 21.125rem;
         }
     }
     .plant{
-        width: 4.5rem;
-        top: 20%;
+        width: auto;
+        top: 9.25rem;
+        left: 16.25rem;
     }
     .about{
         position: relative;
