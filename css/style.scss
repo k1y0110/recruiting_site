@@ -45,27 +45,98 @@ body{
       transform: rotateZ(360deg);
     }
   }
-.bg-{
-    &r{
+  .burgerbtn{
+    display: inline;
+    width: 64px;
+    height: 64px;
+    cursor: pointer;
+    z-index: 100001;
+    position: fixed;
+    top: 0;
+    right: 0;
+    border-radius: 8px;
+    background-color: $red;
+    &-line{
+        display: block;
         position: relative;
-        background: $red;
-        overflow: hidden;
-        padding-top: 20px;
-        z-index: -5;
-    }
-    &w{
-        position: relative;
-        background-color: #FBF9F3;
-        margin: 0 20px;
-        z-index: -3;
+        height: 2px;
+        background-color: #fff;
+        width: 50%;
+        border-radius: 5px;
+        left: 15px;
+        line-height: 1px;
+        transition: .3s;
+        &:nth-child(1){
+            top: 45px;
+        }
+        &:nth-child(2){
+            top: 30px;
+        }
+        &:nth-child(3){
+            top: 15px;
+        }
+        &.open{
+            &:nth-child(1){
+                transform: translateY(-13px) rotate(45deg);
+            }
+            &:nth-child(2){
+                opacity: 0;
+            }
+            &:nth-child(3){
+                transform: translateY(13px) rotate(-45deg);
+            }
+        }
     }
 }
-.header{
+.entry-btn{
+    margin: 0;
+    font-weight: 500;
+    &-link{
+        display: flex;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        height: 50px;
+        width: 100%;
+        z-index: 100000;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        color: #fff;
+        font-size: 2.5rem;
+        transition: all 1s;
+        &::after,
+        &::before {
+            position: absolute;
+            z-index: -1;
+            display: block;
+            content: "";
+            box-sizing: border-box;
+            transition: all 1s;
+        }
+        &:hover:after{
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-color: rgba(255, 255, 255, .3);
+        }
+        &::after{
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+        }
+        &.open{
+            opacity: 0;
+        }
+    }
+}
+.top{
     &-loop{
         position: fixed;
         top: 0;
         left: 0;
-        z-index: 9999;
+        z-index: 100000;
         width: 100%; 
         display: block;
         overflow-x: hidden;
@@ -86,7 +157,7 @@ body{
         position: fixed;
         top: 33px;
         left: 33px;
-        z-index: 9999;
+        z-index: 100000;
         a{
             display: flex;
             flex-direction: column;
@@ -101,6 +172,24 @@ body{
             }
         }
     }
+}
+.bg-{
+    &r{
+        position: relative;
+        background: $red;
+        overflow: hidden;
+        padding-top: 20px;
+        z-index: -5;
+    }
+    &w{
+        position: relative;
+        background-color: #FBF9F3;
+        margin: 0 20px;
+        z-index: -3;
+    }
+}
+.header{
+    position: relative;
     &-nav{
         opacity: 0;
         position: fixed;
@@ -190,92 +279,6 @@ body{
         p{
             text-align: center;
             margin-top: 3rem;
-        }
-    }
-}
-.burgerbtn{
-    display: inline;
-    width: 64px;
-    height: 64px;
-    cursor: pointer;
-    z-index: 10000;
-    position: fixed;
-    top: 0;
-    right: 0;
-    border-radius: 8px;
-    background-color: $red;
-    &-line{
-        display: block;
-        position: relative;
-        height: 2px;
-        background-color: #fff;
-        width: 50%;
-        border-radius: 5px;
-        left: 15px;
-        line-height: 1px;
-        transition: .3s;
-        &:nth-child(1){
-            top: 45px;
-        }
-        &:nth-child(2){
-            top: 30px;
-        }
-        &:nth-child(3){
-            top: 15px;
-        }
-        &.open{
-            &:nth-child(1){
-                transform: translateY(-13px) rotate(45deg);
-            }
-            &:nth-child(2){
-                opacity: 0;
-            }
-            &:nth-child(3){
-                transform: translateY(13px) rotate(-45deg);
-            }
-        }
-    }
-}
-.entry-btn{
-    margin: 0;
-    font-weight: 500;
-    &-link{
-        display: flex;
-        position: fixed;
-        right: 0;
-        bottom: 0;
-        height: 50px;
-        width: 100%;
-        z-index: 100000;
-        justify-content: center;
-        align-items: center;
-        background-color: #000;
-        color: #fff;
-        font-size: 2.5rem;
-        transition: all 1s;
-        &::after,
-        &::before {
-            position: absolute;
-            z-index: -1;
-            display: block;
-            content: "";
-            box-sizing: border-box;
-            transition: all 1s;
-        }
-        &:hover:after{
-            top: 0;
-            bottom: 0;
-            left: 0;
-            background-color: rgba(255, 255, 255, .3);
-        }
-        &::after{
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-        }
-        &.open{
-            opacity: 0;
         }
     }
 }
@@ -475,11 +478,13 @@ body{
                 font-size: 2rem;
                 letter-spacing: .2em;
                 line-height: 1;
-                font-weight: 500;
                 span{
                     font-size: 2.6rem;
                 }
             }
+        }
+        &-mid{
+            font-size: 2rem !important;
         }
         &-big{
             font-size: 3.5rem !important;
@@ -510,7 +515,7 @@ body{
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
-        bottom: -4rem;
+        bottom: -6.5rem;
         mask-image: linear-gradient(to top, transparent 4rem, #000 4rem, #000);
     }
     &-circle{
@@ -534,6 +539,7 @@ body{
             p{
                 padding-bottom: 1rem;
                 display: block;
+                line-height: 1.4;
             }
             span{
                 color: $red;
@@ -565,7 +571,6 @@ body{
         line-height: 1.6;
         text-align: justify;
         padding-bottom: 1.8rem;
-        font-weight: 500;
         &-small{
             display: block;
             font-size: 1.4rem;
@@ -711,7 +716,7 @@ body{
 }
 
 .future{
-    width: 100%;
+    position: relative;
     background-image: url(../images/group-people.jpg);
     background-size: cover;
     background-attachment: fixed;
@@ -720,7 +725,6 @@ body{
     margin: 0;
     padding: 0;
     z-index: -1;
-    position: relative;
     &::before{
         content: "";
         position: absolute;
@@ -731,6 +735,7 @@ body{
         background-color: rgba(0,0,0,0.2);
     }
     &-inner{
+        position: relative;
         aspect-ratio: 1 / 1;
         display: flex;
         align-items: center;
@@ -1104,6 +1109,15 @@ body{
     .pc-br{
         display: block;
     }
+    .top{
+        &-loop{
+            height: 12px;
+        }
+        &-logo{
+            top: 2rem;
+            left: 2rem;
+        }
+    }
     .bg{
         &-r{
             padding-top: 12px;
@@ -1113,9 +1127,6 @@ body{
         }
     }
     .header{
-        &-loop{
-            height: 12px;
-        }
         &-nav{
             border-width: 15px;
         }
@@ -1141,11 +1152,11 @@ body{
         }
         &-news{
             position: relative;
-            width: 33.75rem;
+            width: 35.75rem;
             height: 4rem;
             font-size: 1.3rem;
             padding-left: 1.75rem;
-            left: -32rem;
+            left: -30rem;
             top: -2rem;
             p{
                 font-size: 1.125rem;
@@ -1156,7 +1167,7 @@ body{
             }
             &-ttl{
                 top: auto;
-                left: 4rem;
+                left: 5.5rem;
                 font-size: 1.125rem;
                 font-weight: 600;
                 a{
@@ -1167,131 +1178,150 @@ body{
         }
     }
     .c svg{
-        width: 15rem;
+        width: 16rem;
         left: 10rem;
         top: 8.9375rem;
     }
     .o svg{
-        width: 15rem;
-        left: 24.75rem;
+        width: 16rem;
+        left: 25rem;
         top: 15.5rem;
     }
     .m svg{
-        width: 14.5rem;
+        width: 15.3rem;
         left: 42rem;
         top: 9.75rem;
         z-index: -2;
     }
     .p svg{
-        width: 15rem;
+        width: 16rem;
         left: 47.1875rem;
         top: 32.25rem;
     }
     .a svg{
-        width: 15rem;
+        width: 16rem;
         left: 63.125rem;
         top: 38.5rem;
     }
     .n svg{
-        width: 11.5rem;
+        width: 12rem;
         left: 81rem;
         top: 33.5rem;
     }
     .y svg{
-        width: 15rem;
+        width: 16rem;
         left: 92.875rem;
         top: 27.5rem;
     }
     .person{
         &1{
-            width: 187px;
+            width: 11.6875rem;
             left: 6.25rem;
             top: 17.4375rem;
             z-index: 1;
         }
         &2{
-            width: auto;
+            display: block;
+            width: 8.25rem;
             left: 20.375rem;
             top: 29.8125rem;
         }
         &3{
-            width: 251px;
+            width: 15.6875rem;
             left: 32.5rem;
             top: 17.5rem;
             z-index: -1;
         }
         &4{
-            width: 137px;
-            left: 51.125rem;
-            top: 17.9375rem;
+            width: 8.5625rem;
+            left: 52.125rem;
+            top: 21.5rem;
         }
         &5{
-            width: 337px;
-            left: 59.5625rem;
-            top: 5.3125rem;
+            width: 21.0625rem;
+            left: 76.8rem;
+            top: 1.45rem;
+            
         }
         &6{
-            width: 208px;
-            left: 82.25rem;
-            top: 21.125rem;
+            width: 13rem;
+            left: 64.5625rem;
+            top: 17.3125rem;
         }
     }
     .plant{
-        width: auto;
-        top: 9.25rem;
-        left: 16.25rem;
+        width: 7.9375rem;
+        top: 13.25rem;
+        left: 17.5rem;
     }
     .about{
-        position: relative;
-        max-width: none;
-        height: 75rem;
-        background-size: 80rem;
+        padding-top: 9.375rem;
+        padding-bottom: 11.5rem;
+        background-repeat: no-repeat, repeat;
         background-position: left bottom, center;
-        background-repeat: no-repeat;
-        margin: 0;
+        background-size: 72.5625rem, auto;
         &-ttl{
             max-width: none;
             width: none;
             margin-left: 7.5rem;
             font-size: 3rem;
             position: relative;
+            line-height: 1;
             z-index: 1;
+            &-wrapper{
+            }
             p{
+                margin-top: -1rem;
+                border-width: 2px;
                 span{
                     font-size: 5.5rem;
                 }
             }
+            &-mid{
+                font-size: 4.5rem !important;
+            }
             &-big{
                 display: block;
-                font-size: 6rem;
+                font-size: 7rem !important;
                 z-index: 1;
+                letter-spacing: .1em !important;
             }
         }
         &-sub{
-            margin-left: 44rem;
-            margin-top: -20rem;
+            margin-left: -6rem;
+            margin-top: 2.5rem;
             position: relative;
             z-index: 1;
             p{
-                font-size: 1.4rem;
-                letter-spacing: .1rem;
+                font-size: 1.5rem;
+                border-width: 1px;
             }
         }
         &-img{
-            max-height: none;
-            height: 54rem;
-            z-index: 1;
+            width: 56.25rem;
+            bottom: -4.125rem;
+            left: 0;
+            transform: translateX(0);
         }
         &-circle{
             display: block;
             position: absolute;
-            top: -15%;
-            left: 40%;
+            top: -7rem;
+            right: 4rem;
+            bottom: 0;
             overflow: hidden;
             svg{
-                width: 80rem;
-                animation: rotate 30s linear infinite;
+                width: 57.625rem;
+                animation: rotate 40s linear infinite;
             }
+        }
+        &-pen{
+            display: block;
+            position: absolute;
+            width: 29.25rem;
+            top: -8rem;
+            right: -2rem;
+            z-index: 1;
         }
         &-txt{
             &-pc{
@@ -1302,83 +1332,165 @@ body{
                 color: $red;
                 align-items: center;
                 justify-content: flex-end;
-                left: 70%;
-                top: 13%;
+                left: 70rem;
+                top: 22rem;
+                font-weight: 200;
                 &::after{
                     content: "";
-                    width: 4rem;
-                    height: 2px;
+                    width: 15rem;
+                    height: 1px;
                     background-color: $red;
                     margin-left: 1rem;
                     margin-top: 12px;
                 }
             }
             &-main{
-                font-size: 1.2rem;
-                line-height: 2;
-                margin-left: 55%;
+                font-size: 1.5rem;
+                letter-spacing: .005em;
+                margin-left: 50%;
                 writing-mode: vertical-rl;
                 p{
-                    padding-left: 1.5rem;
+                    line-height: 2.2;
+                    margin-left: 1em;
                 }
             }
         }
     }
     .person{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        margin: 0;
-        padding: 5rem 0 5rem;
-        border-bottom: #fff 1px solid;
-        &-ttl{
-            border: none;
+        position: relative;
+        padding-top: 3.125rem;
+        padding-bottom: 3.125rem;
+        &-wrapper{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 90rem;
+            width: 90%;
+            margin: 0 auto;
             padding: 0;
+        }
+        &-border{
+            position: relative;
+            top: 20.9rem;
+        }
+        &-ttl{
             &-small{
-                font-size: 1.5rem;
-                line-height: 2;
-                padding-right: 1rem;
+                font-size: 2.5rem;
+                margin-right: 1rem;
             }
             &-big{
-                font-size: 5rem;
-                letter-spacing: 1rem;
+                font-size: 9.5rem;
+                letter-spacing: .2em;
             }
         }
         &-txt{
-            padding-left: 1rem;
-            margin: 0;
-            font-size: 1rem;
+            margin-right: -5em;
+            letter-spacing: .2em;
+            text-align: justify;
+            font-size: 1.4rem;
         }
     }
+    .staff{
+        max-width: none;
+        padding-top: 6.625rem;
+        padding-bottom: 6.625rem;
+        &-swiper{
+            width: 100%;
+        }
+        &-list-btn{
+            margin-top: 5rem;
+            width: 15%;
+            &-link{
+                font-size: 1.5rem;
+                padding: 1.5rem;
+            }
+        }
+        &-border{
+            bottom: 9.15rem;
+        }
+    }
+    .second{
+        padding-top: 2.8rem;
+        padding-bottom: 12.625rem;
+    }
     .future{
+        height: 48rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-inner{
+            aspect-ratio: auto;
+        }
         &-logo{
-            width: 6rem;
-            padding-top: .7rem;
+            height: 5rem;
+            padding-top: 1rem;
         }
         &-ttl{
             font-size: 3rem;
             span{
                 font-size: 5.5rem;
+                &:not(:last-child){
+                    padding-right: .1em;
+                }
             }
         }
     }
-    .recruitment-ttl{
-        font-size: 1.6rem;
-    }
-    .entry-ttl{
-        font-size: 1.5rem;
-        margin-bottom: 5rem;
-        &-mid{
-            font-size: 2rem;
+    .recruitment{
+        padding-top: 9.25rem;
+        padding-bottom: 9.25rem;
+        margin-left: 12px;
+        margin-right: 12px;
+        &-ttl{
+            font-size: 2.5rem;
+            margin-bottom: 5.5rem;
         }
-        &-big{
-            font-size: 3rem;
+        &-list{
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+        }
+    }
+    .entry{
+        margin-left: 12px;
+        margin-right: 12px;
+        padding-bottom: 10.25rem;
+        &-loop{
+            &-wrap{
+                margin-bottom: -15rem;
+                ul{
+                    li{
+                        width: 60rem;
+                        margin-left: 6rem;
+                    }
+                }
+            }
+        }
+        &-ttl{
+            font-size: 3.125rem;
+            margin-bottom: 5rem;
+            &-mid{
+                font-size: 3.75rem;
+            }
+            &-big{
+                font-size: 5rem;
+            }
+            &-red{
+                font-size: 6.25rem;
+            }
+        }
+        &-recruit{
+            position: relative;
+            &-grid{
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2.5rem;
+                z-index: 1;
+            }
+        }
+        &-img{
+            bottom: -12.625rem;
         }
     }
     .footer{
         position: relative;
-        height: 20rem;
         padding: 0;
         margin: 0 auto;
         &-wrapper{
@@ -1392,7 +1504,7 @@ body{
                 margin-bottom: 3rem;
             }
             small{
-                font-size: 1.3rem;
+                font-size: 1.5rem;
             }
         }
         &-nav{
@@ -1400,12 +1512,12 @@ body{
             justify-content: center;
             align-items: center;
             width: 52.2%;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             margin: auto;
             ul{
                 margin: 0;
                 li{
-                    padding-left: 1.2rem !important
+                    padding-left: 2em !important
                 }
             }
         }
@@ -1723,12 +1835,6 @@ body{
         }
         &-txt{
             font-size: 1.2rem;
-        }
-    }
-    .staff{
-        max-width: none;
-        &-swiper{
-            width: 97rem;
         }
     }
     .recruitment{

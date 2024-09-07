@@ -31,9 +31,9 @@ const staff = new Swiper(".staff-swiper",{
     },
 
     breakpoints: {
-        1025: {
-          slidesPerView: 2.5, 
-          spaceBetween: 60, 
+        768: {
+          slidesPerView: 4, 
+          spaceBetween: 67, 
         } 
       },
 
