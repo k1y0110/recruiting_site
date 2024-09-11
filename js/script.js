@@ -4,7 +4,7 @@ $(".burgerbtn").on("click",function(){
     $('.header-nav').toggleClass('open')
     $('.burgerbtn-line').toggleClass('open');
     $('.entry-btn-link').toggleClass('open');
-    $('.header-loop').toggleClass('open');
+    $('.top-loop').toggleClass('open');
     $('body').toggleClass('noscroll');
 });
 
