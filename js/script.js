@@ -10,9 +10,9 @@ $(".burgerbtn").on("click",function(){
 
 //news
 
-const news = new Swiper(".fv-news",{
+const news = new Swiper(".fv-news-info",{
     loop: true,
-    slidesPerView: .8,
+    slidesPerView: .75,
 
     autoplay: {
         delay: 5000
